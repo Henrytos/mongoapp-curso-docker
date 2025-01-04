@@ -1,4 +1,5 @@
-version: "3.9"
+version: '3.9'
+
 services:
   chanchito:
     build: .
@@ -15,8 +16,5 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - mongo-data:/data/db
-      # mysql -> /var/lib/mysql
-      # postgres -> /var/lib/postgresql/data
-
 volumes:
   mongo-data:
