@@ -1,25 +1,29 @@
-import express from 'express'
-import mongoose from 'mongoose'
+import express from "express";
+import mongoose from "mongoose";
 
-const Animal = mongoose.model('Animal', new mongoose.Schema({
-  tipo: String,
-  estado: String,
-}))
+const Animal = mongoose.model(
+  "Animal",
+  new mongoose.Schema({
+    tipo: String,
+    estado: String,
+  }),
+);
 
-const app = express()
+const app = express();
 
-mongoose.connect('mongodb://nico:password@monguito:27017/miapp?authSource=admin');
+mongoose.connect("mongodb://nico:password@mongo:27017/miapp?authSource=admin");
 
-
-app.get('/', async (_req, res) => {
-  console.log('listando... muchos chanchitos :) y muchos otros animales tambiem')
+app.get("/", async (_req, res) => {
+  console.log(
+    "listando... muchos chanchitos :) y muchos otros animales tambiem ;-; me ama el docker y docker vcompose",
+  );
   const animales = await Animal.find();
-  return res.send(animales)
-})
-app.get('/crear', async (_req, res) => {
-  console.log('creando...')
-  await Animal.create({ tipo: 'Chanchito', estado: 'Feliz' })
-  return res.send('ok')
-})
+  return res.send(animales);
+});
+app.get("/crear", async (_req, res) => {
+  console.log("creando...");
+  await Animal.create({ tipo: "Chanchito", estado: "Feliz" });
+  return res.send("ok");
+});
 
-app.listen(3000, () => console.log('listening...'))
+app.listen(3000, () => console.log("listening..............."));
