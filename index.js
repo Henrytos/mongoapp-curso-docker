@@ -11,7 +11,7 @@ const Animal = mongoose.model(
 
 const app = express();
 
-mongoose.connect("mongodb://nico:password@mongo:27017/miapp?authSource=admin");
+mongoose.connect("mongodb://nico:password@mongo:27017/mydb?authSource=admin");
 
 app.get("/", async (_req, res) => {
   console.log(

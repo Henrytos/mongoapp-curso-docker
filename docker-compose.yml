@@ -12,8 +12,10 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: "nico"
       MONGO_INITDB_ROOT_PASSWORD: "password"
+      MONGO_INITDB_DATABASE: "mydb"
     volumes:
       - mongo-data:/data/db
 
 volumes:
   mongo-data:
+  
